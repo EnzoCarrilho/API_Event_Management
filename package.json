@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/EnzoCarrilho/API_Event_Management#readme",
   "dependencies": {
+    "@prisma/client": "^7.0.1",
     "body-parser": "^2.2.1",
     "cors": "^2.8.5",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "prisma": "^7.0.1"
   }
 }
