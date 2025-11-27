@@ -28,9 +28,11 @@ app.use((request, response, next)=>{
 //Import das rotas
 const routes_category = require('./routes/routes_categoria.js') 
 const routes_uf = require('./routes/routes_uf.js')
+const routes_stats_event = require('./routes/routes_status_evento.js')
 
 app.use(routes_category)
 app.use(routes_uf)
+app.use(routes_stats_event)
 
 
 app.listen(PORT, () => {
