@@ -65,3 +65,8 @@ const listCategoryByID = async function name(id){
         return MESSAGES.ERROR_INTERNAL_SERVER_CONTROLLER //500(erro interno)
     }
 }
+
+module.exports = {
+    listCategorys,
+    listCategoryByID
+}
