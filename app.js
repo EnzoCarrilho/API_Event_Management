@@ -27,10 +27,10 @@ app.use((request, response, next)=>{
 
 //Import das rotas
 const routes_category = require('./routes/routes_categoria.js') 
-
+const routes_uf = require('./routes/routes_uf.js')
 
 app.use(routes_category)
-
+app.use(routes_uf)
 
 
 app.listen(PORT, () => {
