@@ -8,7 +8,6 @@
 //Import das dependências
 const express =    require('express')
 const cors =       require('cors') 
-const bodyParser = require('body-parser')
 
 //Retorna a porta do sevidor atual ou colocamos uma porta local
 const PORT = process.PORT || 8080

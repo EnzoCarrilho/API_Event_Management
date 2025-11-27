@@ -1,6 +1,6 @@
 /***********************************************************************************************************
- * Objetivo: Arquivo responsável pelo GET de dados no MySQL referente a Categoria 
- * Data: 26/11/2025
+ * Objetivo: Arquivo responsável pelo GET de dados no MySQL referente as UF'S
+ * Data: 27/11/2025
  * Autor: Enzo Carrilho
  * Versão: 1.0
  ***********************************************************************************************************/
@@ -11,10 +11,10 @@ const { PrismaClient } = require('../../generated/prisma')
 //Cria um novo objeto baseado na classe do PrismaClient
 const prisma = new PrismaClient()
 
-//Retorna uma lista de todos os Eventos no BD
-const getAllCategorys = async function(){
+//Retorna todas as uf's
+const getAllUfs = async function(){
     try{
-        let result = await prisma.$queryRaw(`select * from tb_categoria order by id desc`)
+        let result = await prisma.$queryRaw(`select * from tb_uf order by id desc`)
         
         if(Array.isArray(result))
             return result
@@ -26,23 +26,22 @@ const getAllCategorys = async function(){
     }
 }
 
-//Retorna uma categoria filtrando pelo ID
-const getCategoryById = async function(id){
-    try {
-        let result = await prisma.$queryRaw(`select * from tb_categoria where id = ${id}`)
-
+//Retorna uma UF por ID
+const getUfByID = async function(id){
+    try{
+        let result = await prisma.$queryRaw(`select * from tb_uf where id = ${id}`)
+        
         if(Array.isArray(result))
             return result
         else
             return false
 
-    } catch (error) {
+    }catch(error){
         return false
     }
 }
 
-
 module.exports = {
-    getAllCategorys,
-    getCategoryById
+    getAllUfs,
+    getUfByID
 }
