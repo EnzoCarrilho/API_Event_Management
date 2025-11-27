@@ -40,3 +40,8 @@ const getEventStatsByID = async function(id){
         return false
     }
 }
+
+module.exports = {
+    getAllEventStats,
+    getEventStatsByID
+}
