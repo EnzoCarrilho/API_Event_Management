@@ -5,7 +5,7 @@
  * Versão: 1.0
  ***********************************************************************************************************/
 
-//Import da dependência do Prisma que permite a execução de Script SQL no BD
+//Import da dependência do Prisma
 const { PrismaClient } = require('../../generated/prisma')
 
 //Cria um novo objeto baseado na classe do PrismaClient
@@ -26,6 +26,7 @@ const getAllCategorys = async function(){
     }
 }
 
+//Retorna uma categoria filtrando pelo ID
 const getCategoryById = async function(id){
     try {
         let result = await prisma.$queryRaw(`select * from tb_categoria where id = ${id}`)
@@ -41,25 +42,7 @@ const getCategoryById = async function(id){
 }
 
 
-const insertCategory = async function name(category){
-    try {
-        let result = await prisma.$executeRaw(`INSERT INTO tb_categoria(
-                                                nome)
-                                                VALUES('${category.nome}')`
-                                            )
-
-        if(result)
-            return true
-        else
-            return false
-
-    } catch (error) {
-        return false
-    }
-}
-
 module.exports = {
     getAllCategorys,
-    getCategoryById,
-    insertCategory
+    getCategoryById
 }
