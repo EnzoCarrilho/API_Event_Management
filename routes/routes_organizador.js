@@ -63,3 +63,5 @@ router.delete('/v1/webeventos/organizador/:id', cors(), async(request, response)
     response.status(organizer.status_code).json(organizer)
 })
 
+module.exports = router
+

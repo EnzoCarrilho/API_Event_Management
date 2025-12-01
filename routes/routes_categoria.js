@@ -31,3 +31,5 @@ router.get('/v1/webeventos/categoria/:id', cors(), async (request, response) => 
     
     response.status(category.status_code).json(category)
 })
+
+module.exports = router

@@ -30,3 +30,5 @@ router.get('/v1/webeventos/uf/:id', cors(), async (request, response) => {
     
     response.status(stats.status_code).json(stats)
 })
+
+module.exports = router
