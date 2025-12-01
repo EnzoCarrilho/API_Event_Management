@@ -4,7 +4,7 @@
  * Autor: Enzo Carrilho
  * Versão: 1.0
  ***********************************************************************************************************/
-const organizaerDAO = require('../../model/dao/organizador.js')
+const organizerDAO = require('../../model/dao/organizador.js')
 const DEFAULT_MESSAGES = require('../modulo/response_messages.js')
 
 const listOrganizers = async function(){
@@ -12,7 +12,7 @@ const listOrganizers = async function(){
     let MESSAGES = JSON.parse(JSON.stringify(DEFAULT_MESSAGES))
 
     try{
-       let resultOrganizers = await organizaerDAO.getAllOrganizers()
+       let resultOrganizers = await organizerDAO.getAllOrganizers()
        
        if(resultOrganizers){
             if(resultOrganizers != null){
@@ -76,11 +76,11 @@ const setOrganizer = async function(organizador, contentType){
             //Guarda o resultado da validação de dados do Organizador
             let validate = await validateOrganizer(organizador)
             if(!validate){
-                let resultOrganizer = await organizaerDAO.insertOrganizer(organizador)
+                let resultOrganizer = await organizerDAO.insertOrganizer(organizador)
 
                 if(resultOrganizer){
 
-                    let lastId = await organizaerDAO.getLastId()
+                    let lastId = await organizerDAO.getLastId()
 
                     if(lastId){
                         organizador.id = lastId
@@ -128,7 +128,7 @@ const setUpdateOrganizer = async function(organizador, id, contentType){
 
                     organizador.id = Number(id)
 
-                    let resultOrganizer = await organizaerDAO.updateOrganizaer(organizador)
+                    let resultOrganizer = await organizerDAO.updateOrganizaer(organizador)
 
                     if(resultOrganizer){
 
@@ -171,7 +171,7 @@ const setDeleteOrganizer = async function(id){
         
         if(validarId.status_code == 200){
                 
-            let resultOrganizer = await organizaerDAO.deleteOrganizer(Number(id))
+            let resultOrganizer = await organizerDAO.deleteOrganizer(Number(id))
            
     
             if(resultOrganizer){
