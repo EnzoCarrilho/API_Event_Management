@@ -29,10 +29,12 @@ app.use((request, response, next)=>{
 const routes_category = require('./routes/routes_categoria.js') 
 const routes_uf = require('./routes/routes_uf.js')
 const routes_stats_event = require('./routes/routes_status_evento.js')
+const routes_organizer = require('./routes/routes_organizador.js')
 
 app.use(routes_category)
 app.use(routes_uf)
 app.use(routes_stats_event)
+app.use(routes_organizer)
 
 
 app.listen(PORT, () => {
